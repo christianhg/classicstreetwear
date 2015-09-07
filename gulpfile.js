@@ -216,14 +216,14 @@
       .pipe(gulp.dest('build'));
   });
 
-  /**
+   /**
    * Vendor JS
    */
    gulp.task('clean:vendor:js', [
     'build:index'
    ], function() {
      return del([
-       'build/js/app'
+       'build/js/vendor'
      ]);
    });
 
@@ -231,8 +231,7 @@
     'clean:vendor:js'
   ], function() {
     var vendorJS = [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-ui-router/release/angular-ui-router.js'
+      'bower_components/mithril/mithril.js'
     ];
 
     return gulp.src(vendorJS)
